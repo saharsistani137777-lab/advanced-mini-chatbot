@@ -2,16 +2,16 @@ import difflib
 import os
 import datetime
 
-print("🤖 Welcome to Advanced Mini Chatbot!")
-print("Type 'quit' to exit.")
+print("🤖 Welcome to Advanced Mini Chatbot! Let's chat 🎉")
+print("Type 'quit' to exit. Type 'help' if you need guidance.")
 
 
 responses = {
-    "hi": "Hello! How are you?",
+    "hi": "Hello! How are you? 😎",
     "hello": "Hi there! 😊",
-    "how are you": "I'm just a bot, but I'm fine! How about you?",
-    "bye": "Goodbye! Have a great day!",
-    "thanks": "You're welcome!",
+    "how are you": "I'm just a bot, but I'm fine! How about you? 🤖",
+    "bye": "Goodbye! Have a great day! 👋",
+    "thanks": "You're welcome! 😁",
     "help": "You can say hi, hello, how are you, thanks, bye, or quit to exit."
 }
 
@@ -28,8 +28,8 @@ while True:
     user_input = input("You: ").lower()
     
     if user_input == "quit":
-        print("Bot: Bye! 👋")
-        log_chat(user_input, "Bye!")
+        print("Bot: Bye! 👋 See you next time!")
+        log_chat(user_input, "Bye! 👋")
         break
     
     # fuzzy matching
@@ -38,18 +38,18 @@ while True:
     if best_match:
         response = responses[best_match[0]]
     else:
-        response = "Sorry, I don't understand that. Type 'help' for options."
+        response = "Sorry, I don't understand that. Type 'help' for options 😅"
     
     print(f"Bot: {response}")
     log_chat(user_input, response)
     
-  
+
     if user_input.startswith("add response:"):
         try:
             _, key, value = user_input.split(":", 2)
             key = key.strip().lower()
             value = value.strip()
             responses[key] = value
-            print(f"Bot: Response for '{key}' added!")
+            print(f"Bot: Response for '{key}' added! 🎉")
         except:
-            print("Bot: Invalid format. Use add response: key : value")
+            print("Bot: Invalid format. Use add response: key : value ❌")
