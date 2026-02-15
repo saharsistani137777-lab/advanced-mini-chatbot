@@ -12,8 +12,11 @@ A Python conversational agent with fuzzy string matching and dynamic response le
 ## Structure
 
 ├── chatbot.py          # Core conversation logic
+
 ├── responses.json      # Pattern-response knowledge base
+
 ├── logs/               # Conversation archives
+
 └── requirements.txt    # Dependencies
 
 
